@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Your Cart - Clothify</title>
+    <title>Your Cart</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
-<body onload="loadCart()">
 
+<body onload="loadCart()">
 <nav>
     <h2>Clothify</h2>
-    <a href="shop.html">Continue Shopping</a>
 </nav>
 
 <div class="cart-container">
     <h2>Your Cart</h2>
     <div id="cart-items"></div>
+
+    <button style="margin-top:20px;" onclick="goToPayment()">Proceed to Payment</button>
 </div>
 
 </body>
