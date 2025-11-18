@@ -1,30 +1,41 @@
-// Add item to cart
+// Add to Cart
 function addToCart(name, price, img){
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     cart.push({name, price, img});
     localStorage.setItem("cart", JSON.stringify(cart));
-    alert("Added to cart!");
+    alert("Added to Cart!");
 }
 
-// Load cart items
+// Load Cart
 function loadCart(){
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    let container = document.getElementById("cart-items");
+    let box = document.getElementById("cart-items");
 
     if(cart.length === 0){
-        container.innerHTML = "<h2>Your cart is empty.</h2>";
+        box.innerHTML = "<h3>Your cart is empty.</h3>";
         return;
     }
 
     cart.forEach(item => {
-        container.innerHTML += `
+        box.innerHTML += `
         <div class="cart-item">
             <div>
                 <h3>${item.name}</h3>
-                <p>Price: ₹${item.price}</p>
+                <p>₹${item.price}</p>
             </div>
-            <img src="${item.img}" width="120px">
-        </div>
-        `;
+            <img src="${item.img}" width="100">
+        </div>`;
     });
+}
+
+// Goto Payment
+function goToPayment(){
+    window.location.href = "payment.html";
+}
+
+// Payment Success
+function payNow(){
+    alert("Payment Successful! Your order is placed.");
+    localStorage.removeItem("cart");
+    window.location.href = "index.html";
 }
