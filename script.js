@@ -30,7 +30,7 @@ function loadCart(){
 
 // Goto Payment
 function goToPayment(){
-    window.location.href = "payment.html";
+    window.location.href = "https://clotify.netlify.app/payment.html";
 }
 
 // Payment Success
